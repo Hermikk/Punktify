@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Punktide lugemine</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-label color="dark">
+    <p class="label">{{game}}</p>
+  </ion-label>
+
+  <div id="container">
+    <ion-card>
+      <ion-label color="dark">
+        <p class="label">{{teamOne}}</p>
+      </ion-label>
+    </ion-card>
+    <ion-row>
+      <ion-col col-4>
+        <ion-card class="minus" *ngFor="let points of teamOneScore;let i = index" (click)="minusPoint(i)">
+          <ion-item>
+            <ion-icon name="remove-circle" class="icon-minus"></ion-icon>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card class="points" *ngFor="let points of teamOneScore;let i = index">
+          <ion-item>
+            <ion-input type="number" min="1" [value]="points.qty" [(ngModel)]="points.qty" class="value"></ion-input>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card class="plus" *ngFor="let points of teamOneScore;let i = index" (click)="plusPoint(i)">
+          <ion-item>
+            <ion-icon name="add-circle" class="icon-plus"></ion-icon>
+          </ion-item>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div id="container">
+    <ion-card>
+      <ion-label color="dark">
+        <p class="label">{{teamTwo}}</p>
+      </ion-label>
+    </ion-card>
+    <ion-row>
+      <ion-col col-4>
+        <ion-card *ngFor="let points of teamOneScore;let i = index" (click)="minusPoint(i)">
+          <ion-item>
+          <ion-icon name="remove-circle" class="icon-minus"></ion-icon>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card *ngFor="let points of teamOneScore;let i = index">
+          <ion-item>
+            <ion-input type="number" min="1" [value]="points.qty" [(ngModel)]="points.qty" class="value"></ion-input>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card *ngFor="let points of teamOneScore;let i = index" (click)="plusPoint(i)">
+          <ion-item>
+            <ion-icon name="add-circle" class="icon-plus"></ion-icon>
+          </ion-item>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <p><ion-button size="large" shape="round" [routerLink]="['/result', game, teamOne, teamTwo]">Lõpeta punktide lugemine</ion-button></p>  
+
+</ion-content>
+  
