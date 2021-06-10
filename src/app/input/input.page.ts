@@ -18,7 +18,7 @@ export class InputPage {
   }
     //navigeerime edasi ja saadame muutujad kaasa
   pushPage() {
-    this.nav.navigateForward('${this.game}${this.teamOne}{this.teamTwo}');
+    this.nav.navigateForward('${this.game}{this.teamOne}{this.teamTwo}');
   }
 
 }

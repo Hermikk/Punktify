@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./score/score.module').then( m => m.ScorePageModule)
   },
   {
-    path: 'result/:game/:teamOne/:teamTwo',
+    path: 'result/:game/:teamOne/:teamTwo/:LikeValue',
     loadChildren: () => import('./result/result.module').then( m => m.ResultPageModule)
   },
 ];

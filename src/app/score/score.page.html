@@ -68,9 +68,14 @@
       </ion-card>
       </ion-col>
     </ion-row>
+    <ion-label color="dark">
+      <ion-button (click)="handleDisLike()">-</ion-button>    
+      <ion-button>{{LikeValue}}</ion-button>    
+      <ion-button (click)="handleLike()">+</ion-button>   
+    </ion-label>
   </div>
 
-  <p><ion-button size="large" shape="round" [routerLink]="['/result', game, teamOne, teamTwo]">Lõpeta punktide lugemine</ion-button></p>  
+  <p><ion-button size="large" shape="round" [routerLink]="['/result', game, teamOne, teamTwo, LikeValue]">Lõpeta punktide lugemine</ion-button></p>  
 
 </ion-content>
   
