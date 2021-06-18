@@ -5,24 +5,36 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div id="container">
-    <p>Palun sisesta kõik andmed</p>
-    <ion-item>
-      <ion-label >Mängu nimi -</ion-label>
-      <!--siin määrame igale sisendile muutuja -->
-      <ion-input [(ngModel)]="game" type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Tiim 1 - </ion-label>
-      <ion-input [(ngModel)]="teamOne" type="string"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Tiim 2 -</ion-label>
-      <ion-input [(ngModel)]="teamTwo" type="text"></ion-input>
-    </ion-item>
-
-    <!--siin määrame ära kuhu alusta nupp viib ja mis muutujad sellega kaasa lähevad-->
-    <p><ion-button size="large" shape="round" [routerLink]="['/score', game, teamOne, teamTwo]">Alusta</ion-button></p>  
-    <p><ion-button size="large" shape="round" [routerLink]="['/home']">Tagasi</ion-button></p>  
-  </div>
+     
+  <ion-label>
+    Mängu nimi
+  </ion-label>
+    
+  <!--siin määrame igale sisendile muutuja -->
+  <ion-card>  
+    <ion-input [(ngModel)]="game" type="text">
+    </ion-input>
+  </ion-card>
+  <ion-label>
+     Tiim 1 
+  </ion-label>
+  <ion-card>
+    <ion-input [(ngModel)]="teamOne" type="string">
+    </ion-input>
+  </ion-card>
+  <ion-label>
+    Tiim 2
+  </ion-label>
+  <ion-card>
+    <ion-input [(ngModel)]="teamTwo" type="text">
+    </ion-input>
+  </ion-card>
+  <!--siin määrame ära kuhu alusta nupp viib ja mis muutujad sellega kaasa lähevad-->
+  <ion-button size="large" shape="round" [routerLink]="['/score', game, teamOne, teamTwo]">
+    Alusta
+  </ion-button>
+  <ion-button size="large" shape="round" [routerLink]="['/home']">
+    Tagasi
+  </ion-button>
+  
 </ion-content>

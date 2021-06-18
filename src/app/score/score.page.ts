@@ -16,23 +16,34 @@ export class ScorePage implements OnInit {
   game = null;
   teamOne = null;
   teamTwo = null;
-  LikeValue: number;
+  oneLikeValue: number;
+  twoLikeValue: number;
+
 
   ngOnInit() {
     //anname eelnevalt määratud muutujatele väärtused, mis tulid eelmised lehelt kaasa
     this.game = this.activatedRoute.snapshot.paramMap.get('game');
     this.teamOne = this.activatedRoute.snapshot.paramMap.get('teamOne');
     this.teamTwo = this.activatedRoute.snapshot.paramMap.get('teamTwo');
-    this.LikeValue = 0;
+    this.oneLikeValue = 0;
+    this.twoLikeValue = 0;
+
   }
   
   //punktide lugemise osa
-  handleLike(){
-    this.LikeValue++;
+   oneLike(){
+    this.oneLikeValue++;
    }
-   handleDisLike(){
-    this.LikeValue--;
+   oneDisLike(){
+    this.oneLikeValue--;
    }
+   twoLike(){
+    this.twoLikeValue++;
+   }
+   twoDisLike(){
+    this.twoLikeValue--;
+   }
+
 
   teamOneScore = [{
     'qty': 0,
@@ -52,7 +63,7 @@ export class ScorePage implements OnInit {
     this.teamOneScore[index].qty -= 1;
   }
   pushPage() {
-    this.nav.navigateForward('${this.game}{this.teamOne}{this.teamTwo}{this.LikeValue');
+    this.nav.navigateForward('${this.game}{this.teamOne}{this.teamTwo}{this.oneLikeValue}{this.twoLikeValue}');
   }
 
 }

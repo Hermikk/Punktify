@@ -13,13 +13,17 @@ export class ResultPage implements OnInit {
   game = null;
   teamOne = null;
   teamTwo = null;
-  LikeValue = null;
+  oneLikeValue = null;
+  twoLikeValue = null;
+
 
   ngOnInit() {
     this.game = this.activatedRoute.snapshot.paramMap.get('game');
     this.teamOne = this.activatedRoute.snapshot.paramMap.get('teamOne');
     this.teamTwo = this.activatedRoute.snapshot.paramMap.get('teamTwo');
-    this.LikeValue = this.activatedRoute.snapshot.paramMap.get('LikeValue');
+    this.oneLikeValue = this.activatedRoute.snapshot.paramMap.get('oneLikeValue');
+    this.twoLikeValue = this.activatedRoute.snapshot.paramMap.get('twoLikeValue');
+
   }
 
 }
