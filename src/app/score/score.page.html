@@ -4,35 +4,36 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-label color="dark">
-    <p class="label">{{game}}</p>
-  </ion-label>
-
-  <ion-card>
-    <ion-label color="dark">
-      <ion-item>
-       <p class="label">{{teamOne}}</p>
-      </ion-item>
-    </ion-label>
-  </ion-card>
-  <ion-label color="dark">
-    <ion-button (click)="oneDisLike()">-</ion-button>    
-    <ion-button>{{oneLikeValue}}</ion-button>    
-    <ion-button (click)="oneLike()">+</ion-button>   
+<ion-content class="center" [fullscreen]="true">
+  <ion-label>
+    {{game}}
   </ion-label>
   <ion-card>
-    <ion-label color="dark">
-      <p class="label">{{teamTwo}}</p>
-    </ion-label>
+    <ion-card-content>
+       {{teamOne}}
+    </ion-card-content>
   </ion-card>
-  <ion-label color="dark">
-    <ion-button (click)="twoDisLike()">-</ion-button>    
-    <ion-button>{{twoLikeValue}}</ion-button>    
-    <ion-button (click)="twoLike()">+</ion-button>   
-  </ion-label>
-  <div>
-  <p><ion-button size="large" shape="round" [routerLink]="['/result', game, teamOne, teamTwo, oneLikeValue, twoLikeValue]">Lõpeta punktide lugemine</ion-button></p>  
+  <div class="center">
+    <ion-button color="danger" class="minus" (click)="oneNeg()">-</ion-button>    
+    <ion-button class="score">{{oneScoreValue}}</ion-button>    
+    <ion-button color="success" class="plus" (click)="onePlus()">+</ion-button>   
   </div>
+  <ion-card>
+    <ion-card-content>
+      <ion-label>
+        {{teamTwo}}
+      </ion-label>
+    </ion-card-content>
+  </ion-card>
+  <div class="center">
+    <ion-button color="danger" class="minus" (click)="twoNeg()">-</ion-button>    
+    <ion-button class="score">{{twoScoreValue}}</ion-button>    
+    <ion-button color="success" class="plus" (click)="twoPlus()">+</ion-button>   
+  </div>
+  <div class="center">
+    <ion-button size="large" shape="round" [routerLink]="['/result', game, teamOne, teamTwo, oneScoreValue, twoScoreValue]">
+      Lõpeta punktide lugemine
+    </ion-button>
+</div>
 </ion-content>
   

@@ -16,8 +16,8 @@ export class ScorePage implements OnInit {
   game = null;
   teamOne = null;
   teamTwo = null;
-  oneLikeValue: number;
-  twoLikeValue: number;
+  oneScoreValue: number;
+  twoScoreValue: number;
 
 
   ngOnInit() {
@@ -25,45 +25,28 @@ export class ScorePage implements OnInit {
     this.game = this.activatedRoute.snapshot.paramMap.get('game');
     this.teamOne = this.activatedRoute.snapshot.paramMap.get('teamOne');
     this.teamTwo = this.activatedRoute.snapshot.paramMap.get('teamTwo');
-    this.oneLikeValue = 0;
-    this.twoLikeValue = 0;
+    this.oneScoreValue = 0;
+    this.twoScoreValue = 0;
 
   }
   
   //punktide lugemise osa
-   oneLike(){
-    this.oneLikeValue++;
+   onePlus(){
+    this.oneScoreValue++;
    }
-   oneDisLike(){
-    this.oneLikeValue--;
+   oneNeg(){
+    this.oneScoreValue--;
    }
-   twoLike(){
-    this.twoLikeValue++;
+   twoPlus(){
+    this.twoScoreValue++;
    }
-   twoDisLike(){
-    this.twoLikeValue--;
+   twoNeg(){
+    this.twoScoreValue--;
    }
 
 
-  teamOneScore = [{
-    'qty': 0,
-  }];
-  teamOneScoreNew() {
-    this.teamOneScore = this.teamOneScore.map(points => {
-      points['qty'] = 0;
-      return points;
-    });
-  }
-
-  plusPoint(index: number) {
-    this.teamOneScore[index].qty += 1;
-  }
-
-  minusPoint(index: number) {
-    this.teamOneScore[index].qty -= 1;
-  }
   pushPage() {
-    this.nav.navigateForward('${this.game}{this.teamOne}{this.teamTwo}{this.oneLikeValue}{this.twoLikeValue}');
+    this.nav.navigateForward('${this.game}{this.teamOne}{this.teamTwo}{this.oneScoreValue}{this.twoScoreValue}');
   }
 
 }

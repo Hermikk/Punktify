@@ -6,15 +6,22 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
-    <p><ion-button [routerLink]="['/home']">Avalehele</ion-button></p>  
-    <ion-label color="dark">{{game}}</ion-label>
-    <ion-label color="dark">{{teamOne}}</ion-label>
-    <ion-label color="dark">{{teamTwo}}</ion-label>
-    <ion-label color="dark">{{teamOneScore}}</ion-label>
-    <ion-label color="dark">{{oneLikeValue}}</ion-label>
-    <ion-label color="dark">{{twoLikeValue}}</ion-label>
-
-
+    <ion-card>
+      <ion-card-content>
+        <ion-label color="dark">{{result}} - {{winner}}</ion-label>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <ion-label color="dark">{{winner}}</ion-label>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-label color="dark">{{oneScoreValue}} - {{twoScoreValue}}</ion-label>
+      </ion-card-content>
+    </ion-card>    
+    <div>
+      <ion-button [routerLink]="['/home']">Avalehele</ion-button>
+    </div>
   </div>
-  
+
 </ion-content>
