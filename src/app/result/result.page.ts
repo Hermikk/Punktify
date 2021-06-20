@@ -17,6 +17,7 @@ export class ResultPage implements OnInit {
   twoScoreValue = null;
   result = null;
   winner = null;
+  result2 = null;
 
   ngOnInit() {
     this.game = this.activatedRoute.snapshot.paramMap.get('game');
@@ -25,11 +26,10 @@ export class ResultPage implements OnInit {
     this.oneScoreValue = this.activatedRoute.snapshot.paramMap.get('oneScoreValue');
     this.twoScoreValue = this.activatedRoute.snapshot.paramMap.get('twoScoreValue');
    
-    var a = this.oneScoreValue;
-    var b = this.twoScoreValue;
-    if(a==b) {
+    if(this.oneScoreValue==this.twoScoreValue) {
       this.result = "Mäng jäi viiki!";
-    } else if(a>b){
+      this.result2 = "Keegi ei võitnud!"
+    } else if(this.oneScoreValue>this.twoScoreValue){
       this.result = "Mängu võitis";
       this.winner = this.teamOne;
     } else {

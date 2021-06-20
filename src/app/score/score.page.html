@@ -5,35 +5,51 @@
 </ion-header>
 
 <ion-content class="center" [fullscreen]="true">
-  <ion-label>
-    {{game}}
-  </ion-label>
-  <ion-card>
-    <ion-card-content>
-       {{teamOne}}
-    </ion-card-content>
-  </ion-card>
-  <div class="center">
-    <ion-button color="danger" class="minus" (click)="oneNeg()">-</ion-button>    
-    <ion-button class="score">{{oneScoreValue}}</ion-button>    
-    <ion-button color="success" class="plus" (click)="onePlus()">+</ion-button>   
+  <div id="container">
+    <ion-label >
+      {{game}}
+    </ion-label>
+    <ion-card>
+      <ion-card-content>
+        <ion-label>
+          {{teamOne}}
+        </ion-label>
+      </ion-card-content>
+    </ion-card>
+    <div class="center">
+      <ion-button color="danger" class="minus" (click)="oneNeg()">
+        -
+      </ion-button>    
+      <ion-button class="score">
+        {{oneScoreValue}}
+      </ion-button>    
+      <ion-button color="success" class="plus" (click)="onePlus()">
+        +
+      </ion-button>   
+    </div>
+    <ion-card>
+      <ion-card-content>
+        <ion-label>
+          {{teamTwo}}
+        </ion-label>
+      </ion-card-content>
+    </ion-card>
+    <div class="center">
+      <ion-button color="danger" class="minus" (click)="twoNeg()">
+        -
+      </ion-button>    
+      <ion-button class="score">
+        {{twoScoreValue}}
+      </ion-button>    
+      <ion-button color="success" class="plus" (click)="twoPlus()">
+        +
+      </ion-button>   
+    </div>
+    <div class="center">
+      <ion-button size="large" shape="round" [routerLink]="['/result', game, teamOne, teamTwo, oneScoreValue, twoScoreValue]">
+        Lõpeta punktide lugemine
+      </ion-button>
+    </div>
   </div>
-  <ion-card>
-    <ion-card-content>
-      <ion-label>
-        {{teamTwo}}
-      </ion-label>
-    </ion-card-content>
-  </ion-card>
-  <div class="center">
-    <ion-button color="danger" class="minus" (click)="twoNeg()">-</ion-button>    
-    <ion-button class="score">{{twoScoreValue}}</ion-button>    
-    <ion-button color="success" class="plus" (click)="twoPlus()">+</ion-button>   
-  </div>
-  <div class="center">
-    <ion-button size="large" shape="round" [routerLink]="['/result', game, teamOne, teamTwo, oneScoreValue, twoScoreValue]">
-      Lõpeta punktide lugemine
-    </ion-button>
-</div>
 </ion-content>
   
